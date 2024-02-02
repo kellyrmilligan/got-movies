@@ -5,7 +5,7 @@ import { RouteProps } from "@/utils/types/route-props";
 import type { Metadata, ResolvingMetadata } from "next";
 import { MovieHero } from "./components/movie-hero";
 
-import { FavoriteButton } from "./FavoriteButton";
+import { FavoriteButton } from "./components/favorite-button";
 import { ClientOnly } from "@/utils/components/client-only";
 
 interface Params {
@@ -45,22 +45,15 @@ export default async function Page({ params }: { params: Params }) {
         </div>
         <p>{movieDetails.overview}</p>
       </section>
-      {movieDetails.similar ? (
+      {movieDetails.similar.results && movieDetails.similar.results.length ? (
         <section className="p-6">
           <h2 className="mb-6 text-xl md:text-3xl font-bold">
             You may also like...
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            {movieDetails.similar.results &&
-            movieDetails.similar.results.length > 0
-              ? movieDetails.similar.results.map((movie, index) => (
-                  <Movie
-                    key={movie.id}
-                    movie={movie}
-                    isPriority={index === 0}
-                  />
-                ))
-              : null}
+            {movieDetails.similar.results.map((movie, index) => (
+              <Movie key={movie.id} movie={movie} />
+            ))}
           </div>
         </section>
       ) : null}

@@ -2,7 +2,7 @@
 
 import { ConfigContext } from "@/app/providers/configuration-provider";
 import { paths } from "@/schema";
-import { ArrayElement } from "@/utils/array-element";
+import { ArrayElement } from "@/utils/types/array-element";
 import Image from "next/image";
 import Link from "next/link";
 import { FC, useContext } from "react";

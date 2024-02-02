@@ -1,6 +1,7 @@
 "use client";
 
 import { ConfigContext } from "@/app/providers/configuration-provider";
+import { paths } from "@/schema";
 import { FC, useContext } from "react";
 
 interface MovieHeroProps {

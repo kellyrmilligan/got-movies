@@ -1,4 +1,13 @@
+## GoTickets Movies!
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+Other technologies:
+
+- [https://tailwindcss.com/](Tailwind css)
+- [https://daisyui.com/](Daisy ui) - component library built on tailwind
+- [https://github.com/drwpow/openapi-typescript](openapi typescript) - cli to generate types from open api spec, along with open api fetch library that consumes the generated types
+- [https://usehooks.com/](useHooks) - hook library, used for local storage and client/server detection
 
 ## Getting Started
 

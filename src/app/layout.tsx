@@ -4,7 +4,6 @@ import "./globals.css";
 import Link from "next/link";
 import Image from "next/image";
 
-import { ConfigProvider } from "@/app/providers/configuration-provider";
 import { getConfiguration } from "@/services/get-configuration";
 
 const inter = Inter({ subsets: ["latin"] });

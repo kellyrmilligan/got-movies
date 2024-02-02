@@ -1,7 +1,7 @@
 "use client";
 
 import { useLocalStorage } from "@uidotdev/usehooks";
-import { FC, useEffect } from "react";
+import { FC } from "react";
 import { IoIosHeart, IoIosHeartEmpty } from "react-icons/io";
 
 interface FavoriteButtonProps {

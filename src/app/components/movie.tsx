@@ -1,12 +1,9 @@
-"use client";
-
-import { ConfigContext } from "@/app/providers/configuration-provider";
 import { paths } from "@/schema";
 import { ArrayElement } from "@/utils/types/array-element";
-import Image from "next/image";
 import Link from "next/link";
-import { FC, useContext } from "react";
+import { FC } from "react";
 import slugify from "slugify";
+import Image from "next/image";
 
 interface MovieProps {
   /**
@@ -22,16 +19,17 @@ interface MovieProps {
    * set this to true for the first movie in the list
    */
   isPriority?: boolean;
+
+  config: NonNullable<
+    paths["/3/configuration"]["get"]["responses"]["200"]["content"]["application/json"]
+  >;
 }
 
-export const Movie: FC<MovieProps> = async ({ movie, isPriority }) => {
-  const config = useContext(ConfigContext);
-
+export const Movie: FC<MovieProps> = async ({ movie, isPriority, config }) => {
   const movieDetailsHref = `/movie/${movie.id}/${slugify(movie.title ?? "", {
     lower: true,
   })}`;
   const posterImageSrc = `${config?.images?.secure_base_url}${config?.images?.poster_sizes?.[4]}${movie.poster_path}`;
-
   return (
     <div
       key={movie.id}

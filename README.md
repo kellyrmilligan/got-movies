@@ -4,10 +4,11 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 Other technologies:
 
-- [https://tailwindcss.com/](Tailwind css)
-- [https://daisyui.com/](Daisy ui) - component library built on tailwind
-- [https://github.com/drwpow/openapi-typescript](openapi typescript) - cli to generate types from open api spec, along with open api fetch library that consumes the generated types
-- [https://usehooks.com/](useHooks) - hook library, used for local storage and client/server detection
+- [TMDB](https://www.themoviedb.org/) - uses the movie database api for the content
+- [Tailwind css](https://tailwindcss.com/)
+- [Daisy ui](https://daisyui.com/) - component library built on tailwind
+- [openapi typescript](https://github.com/drwpow/openapi-typescript) - cli to generate types from open api spec, along with open api fetch library that consumes the generated types
+- [useHooks](https://usehooks.com/) - hook library, used for local storage and client/server detection
 
 ## Getting Started
 

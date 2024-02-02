@@ -36,7 +36,7 @@ export default async function RootLayout({
             GoTickets &#8594;
           </a>
         </div>
-        <ConfigProvider value={config}>{children}</ConfigProvider>
+        {children}
         <footer className="p-6 bg-base-100 flex justify-center align-middle gap-4 text-neutral-content text-center">
           <p>Content provided by:</p>
           <Image

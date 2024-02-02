@@ -1,12 +1,11 @@
 import { getMovieDetails } from "@/services/get-movie-details";
 
-import { Movie } from "@/app/components/movie";
 import { RouteProps } from "@/utils/types/route-props";
 import type { Metadata, ResolvingMetadata } from "next";
+import { MoviesList } from "@/app/components/movies-list";
 import { MovieHero } from "./components/movie-hero";
-
-import { FavoriteButton } from "./components/favorite-button";
 import { ClientOnly } from "@/utils/components/client-only";
+import { FavoriteButton } from "./components/favorite-button";
 
 interface Params {
   slug: string;
@@ -45,16 +44,12 @@ export default async function Page({ params }: { params: Params }) {
         </div>
         <p>{movieDetails.overview}</p>
       </section>
-      {movieDetails.similar.results && movieDetails.similar.results.length ? (
+      {movieDetails.similar.results && movieDetails.similar.results ? (
         <section className="p-6">
           <h2 className="mb-6 text-xl md:text-3xl font-bold">
             You may also like...
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-            {movieDetails.similar.results.map((movie, index) => (
-              <Movie key={movie.id} movie={movie} />
-            ))}
-          </div>
+          <MoviesList movies={movieDetails.similar.results} />
         </section>
       ) : null}
     </main>

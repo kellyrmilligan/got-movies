@@ -1,16 +1,16 @@
-"use client";
-
-import { ConfigContext } from "@/app/providers/configuration-provider";
-import { paths } from "@/schema";
-import { FC, useContext } from "react";
+import { getConfiguration } from "@/services/get-configuration";
+import { FC } from "react";
 
 interface MovieHeroProps {
   backdrop_path?: string;
   title?: string;
 }
 
-export const MovieHero: FC<MovieHeroProps> = ({ backdrop_path, title }) => {
-  const config = useContext(ConfigContext);
+export const MovieHero: FC<MovieHeroProps> = async ({
+  backdrop_path,
+  title,
+}) => {
+  const config = await getConfiguration();
   return (
     <div
       className="hero aspect-video md:max-h-[400px] lg:max-h-[500px]"

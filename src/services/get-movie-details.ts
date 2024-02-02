@@ -3,6 +3,7 @@ import { client } from "@/utils/client";
 
 export async function getMovieDetails(id: number) {
   const { data, error } = await client.GET("/3/movie/{movie_id}", {
+    cache: "no-store",
     params: {
       path: { movie_id: id },
       query: { language: "en-US", append_to_response: "similar" },
